@@ -1,16 +1,18 @@
-<!-- General JS Scripts -->
-<script src="{{ asset('assets/js/jquery-3.6.1.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/bs/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.nicescroll.min.js') }}"></script>
-<script src="{{ asset('assets/js/moment.js') }}"></script>
-<script src="{{ asset('assets/js/stisla.js') }}/"></script>
+<script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<!-- JS Libraies -->
+<!-- Core plugin JavaScript-->
+<script src="{{ asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-<!-- Template JS File -->
-<script src="{{ asset('assets/js/scripts.js') }}/"></script>
-<script src="{{ asset('assets/js/custom.js') }}/"></script>
+<!-- Custom scripts for all pages-->
+<script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
+
+<!-- Page level plugins -->
+<script src="{{ asset('assets/vendor/chart.js/Chart.min.js') }}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{ asset('assets/js/demo/chart-area-demo.js') }}"></script>
+<script src="{{ asset('assets/js/demo/chart-pie-demo.js') }}"></script>
 @stack('scripts')
 
 <!-- Page Specific JS File -->

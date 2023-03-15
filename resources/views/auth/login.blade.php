@@ -1,59 +1,64 @@
 @extends('auth.app')
 @section('content')
-<section class="section">
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-          <div class="login-brand">
-            <img src="../assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
-          </div>
+    <div class="container">
 
-          <div class="card card-primary">
-            <div class="card-header"><h4>Login</h4></div>
+        <!-- Outer Row -->
+        <div class="row justify-content-center mt-4">
 
-            <div class="card-body">
-              <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
-                @csrf
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" tabindex="1" required autofocus>
-                  @error('email')
-                  <div class="invalid-feedback">
-                   {{ $message }}
-                  </div>
-                  @enderror
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Login Admin!</h1>
+                                    </div>
+                                    <form class="user" action="{{ route('login') }}" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <input type="email"
+                                                class="form-control @error('email') is-invalid @enderror form-control-user"
+                                                id="exampleInputEmail" name="email" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address..." value="{{ old('email') }}">
+                                            @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password">
+                                            @error('password')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" name="rememberme" class="custom-control-input"
+                                                    id="rememberme">
+                                                <label class="custom-control-label" for="rememberme">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-user btn-block">
+                                            Login
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                  <div class="d-block">
-                      <label for="password" class="control-label">Password</label>
-                  </div>
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" tabindex="2" required>
-                  @error('password')
-                  <div class="invalid-feedback">
-                   {{ $message }}
-                  </div>
-                  @enderror
-                </div>
-
-                <div class="form-group">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                    <label class="custom-control-label" for="remember-me">Remember Me</label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                    Login
-                  </button>
-                </div>
-              </form>
-
             </div>
-          </div>
+
         </div>
-      </div>
+
     </div>
-  </section>
 @endsection

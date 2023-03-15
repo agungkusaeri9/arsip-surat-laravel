@@ -1,64 +1,62 @@
-<div>
-    <aside id="sidebar-wrapper">
-        <div class="sidebar-brand">
-            <a href="{{ route('admin.dashboard') }}">Laravel Blog</a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('admin.dashboard') }}">LB</a>
-        </div>
-        <ul class="sidebar-menu">
-            <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-fire"></i>
-                    <span>Dashboard</span></a></li>
-            <li class="menu-header">Artikel</li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-list-alt"></i>
-                    <span>Kategori</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="">Tambah Data</a></li>
-                    <li><a href="">Lihat Data</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-tags"></i>
-                    <span>Tag</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="">Tambah Data</a></li>
-                    <li><a href="">Lihat Data</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fw fa-newspaper"></i>
-                    <span>Artikel</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="">Tambah Data</a></li>
-                    <li><a href="">Lihat Data</a></li>
-                </ul>
-            </li>
-            <li class="menu-header">SEO</li>
-            <li><a class="nav-link" href=""><i class="fas fa-cog"></i>
-                    <span>Halaman Statis</span></a></li>
-            <li><a class="nav-link" href=""><i class="fas fa-cog"></i>
-                    <span>Halaman Dinamis</span></a></li>
-            <li class="menu-header">MASTER</li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i>
-                    <span>Users</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="">Tambah Data</a></li>
-                    <li><a href="{{ route('admin.users.index') }}">Lihat Data</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link" href=""><i class="fas fa-folder"></i>
-                    <span>File Manager</span></a></li>
-            <li><a class="nav-link" href=""><i class="fas fa-folder"></i>
-                    <span>Role</span></a></li>
-            <li><a class="nav-link" href=""><i class="fas fa-folder"></i>
-                    <span>Hak Akses</span></a></li>
-            <li><a class="nav-link" href=""><i class="fas fa-cog"></i>
-                    <span>Pengaturan Web</span></a></li>
-            <li><a class="nav-link" href=""><i class="fas fa-sitemap"></i>
-                    <span>Perbaharui Sitemap</span></a></li>
-        </ul>
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    </aside>
-</div>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Arsip Surat</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.dashboard') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.klasifikasi.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Klasifikasi</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.sifat-surat.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Sifat Surat</span></a>
+    </li>
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.surat-masuk.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Surat Masuk</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.surat-keluar.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Surat Keluar</span></a>
+    </li>
+
+     <!-- Nav Item - Charts -->
+     <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.users.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Users</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider mt-2 d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>
