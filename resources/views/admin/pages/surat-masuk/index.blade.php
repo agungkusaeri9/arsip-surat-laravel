@@ -40,6 +40,8 @@
                                 <td>
                                     <a href="{{ route('admin.surat-masuk.show', $item->id) }}"
                                         class="btn btn-sm btn-warning"><i class="fas fa-eye"></i> Detail</a>
+                                        <a href="{{ route('admin.disposisi-surat.index', $item->id) }}"
+                                            class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Disposisi</a>
                                         <a href="{{ route('admin.surat-masuk.edit', $item->id) }}"
                                             class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
                                     <form action="" method="post"

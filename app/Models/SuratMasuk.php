@@ -10,4 +10,9 @@ class SuratMasuk extends Model
     use HasFactory;
     protected $table = 'surat_masuk';
     protected $guarded = ['id'];
+
+    public function disposisis()
+    {
+        return $this->hasMany(DisposisiSurat::class,'surat_masuk_id');
+    }
 }

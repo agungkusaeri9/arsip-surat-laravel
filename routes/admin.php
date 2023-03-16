@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DisposisiSuratController;
 use App\Http\Controllers\Admin\KlasifikasiController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SifatSuratController;
@@ -31,3 +32,11 @@ Route::get('surat-masuk/{id}/download',[SuratMasukController::class,'download'])
 // surat-keluar
 Route::resource('surat-keluar',SuratKeluarController::class);
 Route::get('surat-keluar/{id}/download',[SuratKeluarController::class,'download'])->name('surat-keluar.download');
+
+// disposisi surat
+Route::get('disposisi-surat/{id}/surat-masuk',[DisposisiSuratController::class,'index'])->name('disposisi-surat.index');
+Route::get('disposisi-surat/{id}/surat-masuk/create',[DisposisiSuratController::class,'create'])->name('disposisi-surat.create');
+Route::post('disposisi-surat/{id}/surat-masuk/create',[DisposisiSuratController::class,'store'])->name('disposisi-surat.store');
+Route::get('disposisi-surat/{id}/edit',[DisposisiSuratController::class,'edit'])->name('disposisi-surat.edit');
+Route::patch('disposisi-surat/{id}/edit',[DisposisiSuratController::class,'update'])->name('disposisi-surat.update');
+Route::delete('disposisi-surat/{id}',[DisposisiSuratController::class,'destroy'])->name('disposisi-surat.destroy');
