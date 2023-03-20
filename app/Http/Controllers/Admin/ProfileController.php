@@ -29,7 +29,7 @@ class ProfileController extends Controller
         {
             $data['avatar'] = request()->file('avatar')->store('users','public');
         }else{
-            $data['avatar'] = NULL;
+            $data['avatar'] = auth()->user()->avatar;
         }
 
         auth()->user()->update($data);

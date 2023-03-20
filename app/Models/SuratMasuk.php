@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,4 +16,5 @@ class SuratMasuk extends Model
     {
         return $this->hasMany(DisposisiSurat::class,'surat_masuk_id');
     }
+
 }

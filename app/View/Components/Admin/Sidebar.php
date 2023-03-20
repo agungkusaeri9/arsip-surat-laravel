@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Admin;
 
+use App\Models\Pengaturan;
 use Illuminate\View\Component;
 
 class Sidebar extends Component
@@ -23,6 +24,9 @@ class Sidebar extends Component
      */
     public function render()
     {
-        return view('components.admin.sidebar');
+        $pengaturan = Pengaturan::first();
+        return view('components.admin.sidebar',[
+            'pengaturan' => $pengaturan
+        ]);
     }
 }

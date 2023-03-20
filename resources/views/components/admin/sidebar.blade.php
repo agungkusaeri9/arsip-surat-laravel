@@ -2,10 +2,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Arsip Surat</div>
+        <div class="sidebar-brand-text mx-3">{{ $pengaturan->nama }}</div>
     </a>
 
     <!-- Divider -->
@@ -16,6 +13,12 @@
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.surat.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Surat</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
@@ -50,6 +53,12 @@
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.users.index') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.pengaturan.index') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pengaturan</span></a>
     </li>
 
     <!-- Divider -->

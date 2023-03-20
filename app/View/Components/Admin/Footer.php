@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Admin;
 
+use App\Models\Pengaturan;
 use Illuminate\View\Component;
 
 class Footer extends Component
@@ -23,6 +24,8 @@ class Footer extends Component
      */
     public function render()
     {
-        return view('components.admin.footer');
+        return view('components.admin.footer',[
+            'pengaturan' => Pengaturan::first()
+        ]);
     }
 }
