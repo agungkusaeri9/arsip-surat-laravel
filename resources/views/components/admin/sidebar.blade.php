@@ -48,12 +48,35 @@
             <span>Surat Keluar</span></a>
     </li>
 
-     <!-- Nav Item - Charts -->
-     <li class="nav-item">
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.buku-agenda.surat-masuk.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Buku Agenda Surat Masuk</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.buku-agenda.surat-keluar.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Buku Agenda Surat Keluar</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0" href="{{ route('admin.galeri.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Galeri</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.users.index') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span></a>
     </li>
+
+
 
     <li class="nav-item">
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.pengaturan.index') }}">

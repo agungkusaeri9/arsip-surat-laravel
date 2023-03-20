@@ -10,4 +10,5 @@ class SuratKeluar extends Model
     use HasFactory;
     protected $table = 'surat_keluar';
     protected $guarded = ['id'];
+    public $dates = ['tanggal_surat'];
 }

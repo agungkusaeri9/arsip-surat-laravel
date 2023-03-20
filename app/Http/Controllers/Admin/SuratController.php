@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pengaturan;
 use App\Models\Surat;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class SuratController extends Controller
 {
@@ -99,5 +101,22 @@ class SuratController extends Controller
         $item = Surat::findOrFail($id);
         $item->delete();
         return redirect()->route('admin.surat.index')->with('success', 'Surat berhasil dihapus.');
+    }
+
+    public function print($id)
+    {
+        $item = Surat::findOrFail($id);
+        $pengaturan = Pengaturan::first();
+        $pdf = Pdf::loadView('admin.pages.surat.print',[
+                'title' => 'Cetak Surat',
+                'item' => $item,
+                'pengaturan' => $pengaturan
+            ]);
+        return $pdf->download('Surat ' . \Str::slug($item->judul) . '.pdf');
+        // return view('admin.pages.surat.print', [
+        //     'title' => 'Cetak Surat',
+        //     'item' => $item,
+        //     'pengaturan' => $pengaturan
+        // ]);
     }
 }

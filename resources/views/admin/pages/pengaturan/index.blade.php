@@ -20,6 +20,22 @@
                                     <span>{{ $pengaturan->nama }}</span>
                                 </li>
                                 <li class="list-inline-item mb-3 d-flex justify-content-between">
+                                    <span class="font-weight-bold">Email</span>
+                                    <span>{{ $pengaturan->email }}</span>
+                                </li>
+                                <li class="list-inline-item mb-3 d-flex justify-content-between">
+                                    <span class="font-weight-bold">Nama Kepala Sekolah</span>
+                                    <span>{{ $pengaturan->nama_kepala_sekolah }}</span>
+                                </li>
+                                <li class="list-inline-item mb-3 d-flex justify-content-between">
+                                    <span class="font-weight-bold">NIP Kepala Sekolah</span>
+                                    <span>{{ $pengaturan->nip_kepala_sekolah }}</span>
+                                </li>
+                                <li class="list-inline-item mb-3 d-flex justify-content-between">
+                                    <span class="font-weight-bold">Kode Pos</span>
+                                    <span>{{ $pengaturan->kode_pos }}</span>
+                                </li>
+                                <li class="list-inline-item mb-3 d-flex justify-content-between">
                                     <span class="font-weight-bold">Deskripsi</span>
                                     <span class="text-right">{{ $pengaturan->deskripsi }}</span>
                                 </li>
@@ -86,6 +102,46 @@
                             <input type='text' name='nama' class='form-control @error('nama') is-invalid @enderror'
                                 value='{{ $pengaturan->nama ?? old('nama') }}'>
                             @error('nama')
+                                <div class='invalid-feedback'>
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class='form-group mb-3'>
+                            <label for='email' class='mb-2'>Email</label>
+                            <input type='text' name='email' class='form-control @error('email') is-invalid @enderror'
+                                value='{{ $pengaturan->email ?? old('email') }}'>
+                            @error('email')
+                                <div class='invalid-feedback'>
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class='form-group mb-3'>
+                            <label for='nama_kepala_sekolah' class='mb-2'>Nama Kepala Sekolah</label>
+                            <input type='text' name='nama_kepala_sekolah' class='form-control @error('nama_kepala_sekolah') is-invalid @enderror'
+                                value='{{ $pengaturan->nama_kepala_sekolah ?? old('nama_kepala_sekolah') }}'>
+                            @error('nama_kepala_sekolah')
+                                <div class='invalid-feedback'>
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class='form-group mb-3'>
+                            <label for='nip_kepala_sekolah' class='mb-2'>NIP Kepala Sekolah</label>
+                            <input type='text' name='nip_kepala_sekolah' class='form-control @error('nip_kepala_sekolah') is-invalid @enderror'
+                                value='{{ $pengaturan->nip_kepala_sekolah ?? old('nip_kepala_sekolah') }}'>
+                            @error('nip_kepala_sekolah')
+                                <div class='invalid-feedback'>
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class='form-group mb-3'>
+                            <label for='kode_pos' class='mb-2'>Kode Pos</label>
+                            <input type='text' name='kode_pos' class='form-control @error('kode_pos') is-invalid @enderror'
+                                value='{{ $pengaturan->kode_pos ?? old('kode_pos') }}'>
+                            @error('kode_pos')
                                 <div class='invalid-feedback'>
                                     {{ $message }}
                                 </div>

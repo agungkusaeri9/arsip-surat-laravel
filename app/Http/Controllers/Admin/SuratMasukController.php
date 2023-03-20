@@ -139,7 +139,7 @@ class SuratMasukController extends Controller
         return redirect()->route('admin.surat-masuk.index')->with('success', 'Surat Masuk berhasil dihapus.');
     }
 
-    public function download($kode)
+    public function print($kode)
     {
 
         $item = SuratMasuk::where('kode', $kode)->firstOrFail();
@@ -148,9 +148,26 @@ class SuratMasukController extends Controller
 
             $file = Storage::disk('public')->get($item->file);
             return (new Response($file, 200))
-            ->header('Content-Type', 'application/pdf');
+                ->header('Content-Type', 'application/pdf');
         } else {
             return redirect()->back()->with('error', 'File tidak ditemukan.');
+        }
+    }
+
+    public function download($kode)
+    {
+        $item = SuratMasuk::where('kode', $kode)->firstOrFail();
+        if ($item->file) {
+            $filePath = public_path('storage/') . $item->file;
+            $headers = ['Content-Type:','application/pdf'];
+            $fileName = 'Surat-masuk-' . $item->kode . '.pdf';
+
+            if (!file_exists($filePath)) {
+                return redirect()->back()->with('gagal', 'Downloading Failed.');
+            }
+            return response()->download($filePath, $fileName, $headers);
+        } else {
+            return redirect()->back()->with('gagal', 'File Tidak Ditemukan.');
         }
     }
 }

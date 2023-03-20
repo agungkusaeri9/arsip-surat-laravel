@@ -26,7 +26,7 @@
                                 <td>{{ $item->nomor }}</td>
                                 <td>{{ $item->tempat_waktu }}</td>
                                 <td>
-                                    <a href="" class="btn btn-danger btn-sm"><i class="fas fa-file-pdf"></i> Cetak</a>
+                                    <a href="{{ route('admin.surat.print',$item->id) }}" class="btn btn-danger btn-sm"><i class="fas fa-file-pdf"></i> Cetak</a>
                                     <a href="{{ route('admin.surat.edit', $item->id) }}"
                                         class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
                                     <form action="" method="post"

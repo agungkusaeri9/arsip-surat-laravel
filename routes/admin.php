@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\BukuAgendaController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DisposisiSuratController;
+use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\KlasifikasiController;
 use App\Http\Controllers\Admin\PengaturanController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -31,10 +33,13 @@ Route::resource('sifat-surat',SifatSuratController::class)->except('show');
 // surat-masuk
 Route::resource('surat-masuk',SuratMasukController::class);
 Route::get('surat-masuk/{id}/download',[SuratMasukController::class,'download'])->name('surat-masuk.download');
+Route::get('surat-masuk/{id}/print',[SuratMasukController::class,'print'])->name('surat-masuk.print');
+
 
 // surat-keluar
 Route::resource('surat-keluar',SuratKeluarController::class);
 Route::get('surat-keluar/{id}/download',[SuratKeluarController::class,'download'])->name('surat-keluar.download');
+Route::get('surat-keluar/{id}/print',[SuratKeluarController::class,'print'])->name('surat-keluar.print');
 
 // disposisi surat
 Route::get('disposisi-surat/{id}/surat-masuk',[DisposisiSuratController::class,'index'])->name('disposisi-surat.index');
@@ -51,3 +56,13 @@ Route::post('pengaturan',[PengaturanController::class,'update'])->name('pengatur
 
 // surat
 Route::resource('surat',SuratController::class)->except('show');
+Route::get('surat/{id}/print',[SuratController::class, 'print'])->name('surat.print');
+// buku agenda surat masuk
+Route::get('buku-agenda/surat-masuk',[BukuAgendaController::class,'surat_masuk'])->name('buku-agenda.surat-masuk.index');
+Route::post('buku-agenda/surat-masuk',[BukuAgendaController::class,'surat_masuk'])->name('buku-agenda.surat-masuk.filter');
+
+// buku agenda surat keluar
+Route::get('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.index');
+Route::post('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.filter');
+
+Route::get('galeri',[GaleriController::class,'index'])->name('galeri.index');
