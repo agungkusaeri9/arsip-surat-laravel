@@ -113,10 +113,5 @@ class SuratController extends Controller
                 'pengaturan' => $pengaturan
             ]);
         return $pdf->download('Surat ' . \Str::slug($item->judul) . '.pdf');
-        // return view('admin.pages.surat.print', [
-        //     'title' => 'Cetak Surat',
-        //     'item' => $item,
-        //     'pengaturan' => $pengaturan
-        // ]);
     }
 }

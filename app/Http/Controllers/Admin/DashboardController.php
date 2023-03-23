@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Klasifikasi;
+use App\Models\Surat;
 use App\Models\SuratKeluar;
 use App\Models\SuratMasuk;
 use Carbon\Carbon;
@@ -17,7 +18,8 @@ class DashboardController extends Controller
             [
                 'surat_masuk' => SuratMasuk::count(),
                 'surat_keluar' => SuratKeluar::count(),
-                'klasifikasi' => Klasifikasi::count()
+                'klasifikasi' => Klasifikasi::count(),
+                'surat' => Surat::count()
             ];
         $pieChart = [
             'surat_masuk' => SuratMasuk::count(),

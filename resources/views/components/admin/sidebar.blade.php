@@ -65,7 +65,7 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.galeri.index') }}">
-            <i class="fas fa-fw fa-users"></i>
+            <i class="fas fa-fw fa-file"></i>
             <span>Galeri</span></a>
     </li>
 
