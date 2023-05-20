@@ -17,14 +17,14 @@
 
     <li class="nav-item">
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.surat.index') }}">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-pen-square"></i>
             <span>Surat</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link mb-0 pb-0" href="{{ route('admin.klasifikasi.index') }}">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-list"></i>
             <span>Klasifikasi</span></a>
     </li>
 
@@ -38,7 +38,7 @@
     <li class="nav-item">
         <a class="nav-link mb-0 pb-0 collapsed" href="#" data-toggle="collapse" data-target="#transaksi_surat"
             aria-expanded="true" aria-controls="transaksi_surat">
-            <i class="fas fa-fw fa-file"></i>
+            <i class="fas fa-fw fa-envelope"></i>
             <span>Transaksi Surat</span>
         </a>
         <div id="transaksi_surat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -52,7 +52,7 @@
     <li class="nav-item">
         <a class="nav-link mb-0 pb-0 collapsed" href="#" data-toggle="collapse" data-target="#buku_agenda"
             aria-expanded="true" aria-controls="buku_agenda">
-            <i class="fas fa-fw fa-file"></i>
+            <i class="fas fa-fw fa-book"></i>
             <span>Buku Agenda</span>
         </a>
         <div id="buku_agenda" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
