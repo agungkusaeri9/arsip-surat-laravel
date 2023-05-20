@@ -64,5 +64,3 @@ Route::post('buku-agenda/surat-masuk',[BukuAgendaController::class,'surat_masuk'
 // buku agenda surat keluar
 Route::get('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.index');
 Route::post('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.filter');
-
-Route::get('galeri',[GaleriController::class,'index'])->name('galeri.index');

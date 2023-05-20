@@ -3,6 +3,9 @@
     <div class="row mb-3">
         <div class="col-md-12">
             <div class="card">
+                <div class="card-header">
+                    <h6>Filter Data</h6>
+                </div>
                 <form action="{{ route('admin.buku-agenda.surat-keluar.filter') }}" method="post">
                     <div class="card-body row">
                         @csrf
@@ -31,6 +34,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
+                <div class="card-header">
+                    <h6>Buku Agenda Surat Keluar</h6>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover" id="dTable">

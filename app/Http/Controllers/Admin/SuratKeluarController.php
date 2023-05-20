@@ -42,7 +42,7 @@ class SuratKeluarController extends Controller
     {
         request()->validate([
             'no_agenda' => ['required'],
-            'pengirim' => ['required'],
+            'penerima' => ['required'],
             'no_surat' => ['required', 'unique:surat_keluar,no_surat'],
             'isi' => ['required'],
             'keterangan' => ['required'],
@@ -103,7 +103,7 @@ class SuratKeluarController extends Controller
     {
         request()->validate([
             'no_agenda' => ['required', Rule::unique('surat_keluar', 'no_agenda')->ignore($id)],
-            'pengirim' => ['required'],
+            'penerima' => ['required'],
             'no_surat' => ['required', Rule::unique('surat_keluar', 'no_surat')->ignore($id)],
             'isi' => ['required'],
             'keterangan' => ['required'],

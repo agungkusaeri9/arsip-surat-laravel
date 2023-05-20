@@ -34,40 +34,35 @@
             <i class="fas fa-fw fa-folder"></i>
             <span>Sifat Surat</span></a>
     </li>
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link mb-0 pb-0" href="{{ route('admin.surat-masuk.index') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Surat Masuk</span></a>
-    </li>
 
-    <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link mb-0 pb-0" href="{{ route('admin.surat-keluar.index') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Surat Keluar</span></a>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link mb-0 pb-0" href="{{ route('admin.buku-agenda.surat-masuk.index') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Buku Agenda Surat Masuk</span></a>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link mb-0 pb-0" href="{{ route('admin.buku-agenda.surat-keluar.index') }}">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Buku Agenda Surat Keluar</span></a>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link mb-0 pb-0" href="{{ route('admin.galeri.index') }}">
+        <a class="nav-link mb-0 pb-0 collapsed" href="#" data-toggle="collapse" data-target="#transaksi_surat"
+            aria-expanded="true" aria-controls="transaksi_surat">
             <i class="fas fa-fw fa-file"></i>
-            <span>Galeri</span></a>
+            <span>Transaksi Surat</span>
+        </a>
+        <div id="transaksi_surat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.surat-masuk.index') }}">Surat Masuk</a>
+                <a class="collapse-item" href="{{ route('admin.surat-keluar.index') }}">Surat Keluar</a>
+            </div>
+        </div>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link mb-0 pb-0 collapsed" href="#" data-toggle="collapse" data-target="#buku_agenda"
+            aria-expanded="true" aria-controls="buku_agenda">
+            <i class="fas fa-fw fa-file"></i>
+            <span>Buku Agenda</span>
+        </a>
+        <div id="buku_agenda" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.buku-agenda.surat-masuk.index') }}">Surat Masuk</a>
+                <a class="collapse-item" href="{{ route('admin.buku-agenda.surat-keluar.index') }}">Surat Keluar</a>
+            </div>
+        </div>
+    </li>
+
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">

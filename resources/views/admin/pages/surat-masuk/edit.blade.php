@@ -64,7 +64,7 @@
                         <div class="form-group">
                             <label>Tanggal Surat</label>
                             <input type="date" class="form-control @error('tanggal_surat') is-invalid @enderror"
-                                required="" name="tanggal_surat" value="{{ $item->tanggal_surat ?? old('tanggal_surat') }}">
+                                required="" name="tanggal_surat" value="{{ $item->tanggal_surat ? $item->tanggal_surat->translatedFormat('Y-m-d') : old('tanggal_surat') }}">
                             @error('tanggal_surat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
