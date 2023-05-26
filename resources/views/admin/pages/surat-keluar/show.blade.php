@@ -83,18 +83,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Tanggal Diterima</label>
-                            <input type="date" class="form-control @error('tanggal_diterima') is-invalid @enderror"
-                                required="" name="tanggal_diterima"
-                                value="{{ $item->tanggal_diterima ? $item->tanggal_diterima : old('tanggal_diterima') }}"
-                                disabled>
-                            @error('tanggal_diterima')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label>File</label>
                             @if ($item->file)
                                 <a href="{{ route('admin.surat-keluar.download', $item->kode) }}" target="_blank"

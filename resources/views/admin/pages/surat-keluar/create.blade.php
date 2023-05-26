@@ -71,16 +71,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Tanggal Diterima</label>
-                            <input type="date" class="form-control @error('tanggal_diterima') is-invalid @enderror"
-                                required="" name="tanggal_diterima" value="{{ old('tanggal_diterima') }}">
-                            @error('tanggal_diterima')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label>File</label>
                             <input type="file" class="form-control @error('file') is-invalid @enderror"
                                 required="" name="file" value="{{ old('file') }}">

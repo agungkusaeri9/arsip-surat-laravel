@@ -13,8 +13,8 @@
         /* @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap'); */
         body {
             margin-top: -40px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
         }
 
         .tengah {
@@ -23,9 +23,9 @@
             font-size: 12px;
         }
 
-        .isi {
+        /* .isi {
             font-size: 12px !important;
-        }
+        } */
 
         .li-kanan {
             font-size: 10px;
@@ -49,7 +49,7 @@
             right: 0;
             left: 0;
             font-family: 'Caveat', cursive;
-            font-size: 25px;
+            font-size: 14px;
             color: rgb(105, 156, 160);
             font-weight: bold;
             opacity: .5;
@@ -66,7 +66,7 @@
             <td class="tengah" width="50%">
                 <h4 style="font-size: 10px;margin-bottom:20px;font-weight:normal">YAYASAN PONDOK PESANTREN AL-ISHLAHIYAH
                     SINGOSARI MALANG</h4>
-                <h1 style="font-size: 22px;margin-bottom:15px;">SMK TERPADU AL-ISHLAHIYAH</h1>
+                <h1 style="font-size: 20px;margin-bottom:15px;">SMK TERPADU AL-ISHLAHIYAH</h1>
                 <h3 style="font-size: 12px;margin-bottom:10px;font-weight:normal">NSS:322051805052, NPSN:20549523,
                     Terakreditasi B</h3>
             </td>
@@ -103,7 +103,7 @@
         </tr>
     </table>
     <div style="text-align:center">
-        <h1 style="font-weight:700;text-transform:uppercase;text-decoration:underline"><?= $item->judul ?></h1>
+        <h1 style="font-weight:700;text-transform:uppercase;text-decoration:underline;font-size:20px;"><?= $item->judul ?></h1>
         <div style="font-weight:italic;text-decoration:none;font-size:14px;margin-top:-10px;margin-bottom:10px;">No
             Surat : <?= $item->nomor ?></div>
     </div>
