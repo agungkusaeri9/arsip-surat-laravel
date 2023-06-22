@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -31,8 +32,10 @@ class UserController extends Controller
      */
     public function create()
     {
+        $roles = Role::get();
         return view('admin.pages.user.create',[
-            'title' => 'Tambah User'
+            'title' => 'Tambah User',
+            'roles' => $roles
         ]);
     }
 
@@ -51,7 +54,8 @@ class UserController extends Controller
             'password' => ['required','min:6','confirmed'],
             'password_confirmation' => ['required'],
             'status' => ['required','in:1,0'],
-            'avatar' => ['image','mimes:jpg,jpeg,png']
+            'avatar' => ['image','mimes:jpg,jpeg,png'],
+            'role' => ['required']
         ]);
 
         $data = request()->all();
@@ -62,7 +66,8 @@ class UserController extends Controller
             $data['avatar'] = NULL;
         }
         $data['password'] = bcrypt(request('password'));
-        User::create($data);
+        $user = User::create($data);
+        $user->assignRole(request('role'));
         return redirect()->route('admin.users.index')->with('success','User berhasil ditambahkan.');
     }
 
@@ -86,9 +91,11 @@ class UserController extends Controller
     public function edit($id)
     {
         $item = User::findOrFail($id);
+        $roles = Role::get();
         return view('admin.pages.user.edit',[
             'title' => 'Edit User',
-            'item' => $item
+            'item' => $item,
+            'roles' => $roles
         ]);
     }
 
@@ -109,7 +116,8 @@ class UserController extends Controller
             'username' => ['required',Rule::unique('users')->ignore($item->id),'alpha_num'],
             'email' => ['required','email',Rule::unique('users')->ignore($item->id)],
             'status' => ['required','in:1,0'],
-            'avatar' => ['image','mimes:jpg,jpeg,png']
+            'avatar' => ['image','mimes:jpg,jpeg,png'],
+            'role' => ['required']
         ]);
         if(request('password'))
         {
@@ -133,6 +141,7 @@ class UserController extends Controller
             $data['avatar'] = $item->avatar;
         }
         $item->update($data);
+        $item->syncRoles(request('role'));
         return redirect()->route('admin.users.index')->with('success','User berhasil disimpan.');
     }
 

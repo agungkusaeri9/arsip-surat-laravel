@@ -4,20 +4,15 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header d-flex justify-content-between">
-                <h5>Data User</h5>
-                <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-primary mb-3">Tambah Data</a>
+                <h5>Data Roles</h5>
+                <a href="{{ route('admin.roles.create') }}" class="btn btn-sm btn-primary mb-3">Tambah Data</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-hover" id="dTable">
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Avatar</th>
-                            <th>Nama</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
+                            <th>Name</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -25,23 +20,17 @@
                         @foreach ($items as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>
-                                    <img src="{{ $item->avatar() }}" class="img-fluid rounded-circle"
-                                        style="max-height: 60px" alt="">
-                                </td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->username }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>{{ $item->getRoleNames()->first()  ?? '-'}}</td>
-                                <td>{!! $item->status() !!}</td>
                                 <td>
-                                    <a href="{{ route('admin.users.edit', $item->id) }}"
-                                        class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="{{ route('admin.role-permissions.edit') . '?role_name=' . $item->name }}"
+                                        class="btn btn-sm btn-warning"><i class="fas fa-eye"></i> Permission</a>
+                                        <a href="{{ route('admin.roles.edit', $item->id) }}"
+                                            class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
                                     <form action="" method="post"
                                         class="d-inline" id="formDelete">
                                         @csrf
                                         @method('delete')
-                                        <button data-action="{{ route('admin.users.destroy',$item->id) }}" class="btn btn-sm btn-danger btnDelete"><i
+                                        <button data-action="{{ route('admin.roles.destroy',$item->id) }}" class="btn btn-sm btn-danger btnDelete"><i
                                                 class="fas fa-trash"></i> Hapus</button>
                                     </form>
                                 </td>

@@ -75,6 +75,20 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label>Role</label>
+                        <select name="role" id="role" class="form-control" required="">
+                            <option value="" selected disabled>Pilih Role</option>
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->name }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('role')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label>Avatar</label>
                        <input type="file" name="avatar" class="form-control">
                         @error('avatar')

@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\DisposisiSuratController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\KlasifikasiController;
 use App\Http\Controllers\Admin\PengaturanController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SifatSuratController;
 use App\Http\Controllers\Admin\SuratController;
 use App\Http\Controllers\Admin\SuratKeluarController;
@@ -29,6 +31,15 @@ Route::resource('klasifikasi',KlasifikasiController::class)->except('show');
 
 // sifat-surat
 Route::resource('sifat-surat',SifatSuratController::class)->except('show');
+
+// roles
+Route::get('role-permissions', [RoleController::class, 'edit_role_permission'])->name('role-permissions.edit');
+Route::post('role-permissions', [RoleController::class, 'update_role_permission'])->name('role-permissions.update');
+Route::resource('roles',RoleController::class)->except('show');
+
+
+// permissions
+Route::resource('permissions',PermissionController::class)->except('show');
 
 // surat-masuk
 Route::resource('surat-masuk',SuratMasukController::class);

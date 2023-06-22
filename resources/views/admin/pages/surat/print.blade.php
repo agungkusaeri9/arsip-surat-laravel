@@ -129,9 +129,6 @@
             </td>
         </tr>
     </table>
-    <div class="footer">
-        "Sekolah Sah Ngajine"
-    </div>
 </body>
 
 </html>

@@ -31,13 +31,17 @@
     </nav>
 </div> --}}
 
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="background: #F4E8C1 !important">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
     </button>
-
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <img src="{{ asset('assets/img/logo-um.png') }}" alt="" class="img-fluid" style="height:50px">
+        </li>
+    </ul>
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
