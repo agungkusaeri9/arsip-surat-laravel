@@ -11,7 +11,7 @@ class SuratMasuk extends Model
     use HasFactory;
     protected $table = 'surat_masuk';
     protected $guarded = ['id'];
-    public $dates = ['tanggal_surat'];
+    public $dates = ['tanggal_surat','tanggal_diterima'];
 
     public function disposisis()
     {

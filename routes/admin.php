@@ -70,8 +70,12 @@ Route::resource('surat',SuratController::class)->except('show');
 Route::get('surat/{id}/print',[SuratController::class, 'print'])->name('surat.print');
 // buku agenda surat masuk
 Route::get('buku-agenda/surat-masuk',[BukuAgendaController::class,'surat_masuk'])->name('buku-agenda.surat-masuk.index');
-Route::post('buku-agenda/surat-masuk',[BukuAgendaController::class,'surat_masuk'])->name('buku-agenda.surat-masuk.filter');
+Route::get('buku-agenda/surat-masuk/filter',[BukuAgendaController::class,'surat_masuk'])->name('buku-agenda.surat-masuk.filter');
+Route::get('buku-agenda/surat-masuk/export-pdf',[BukuAgendaController::class,'surat_masuk_pdf'])->name('buku-agenda.surat-masuk.pdf');
+Route::get('buku-agenda/surat-masuk/export-excel',[BukuAgendaController::class,'surat_masuk_excel'])->name('buku-agenda.surat-masuk.excel');
 
 // buku agenda surat keluar
 Route::get('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.index');
-Route::post('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.filter');
+Route::get('buku-agenda/surat-keluar/filter',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.filter');
+Route::get('buku-agenda/surat-keluar/export-pdf',[BukuAgendaController::class,'surat_keluar_pdf'])->name('buku-agenda.surat-keluar.pdf');
+Route::get('buku-agenda/surat-keluar/export-excel',[BukuAgendaController::class,'surat_keluar_excel'])->name('buku-agenda.surat-keluar.excel');

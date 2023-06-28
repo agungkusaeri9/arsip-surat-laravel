@@ -32,10 +32,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Pengirim</label>
-                            <input type="text" class="form-control @error('pengirim') is-invalid @enderror"
-                                required="" name="pengirim" value="{{ $item->pengirim ?? old('pengirim') }}" disabled>
-                            @error('pengirim')
+                            <label>Penerima</label>
+                            <input type="text" class="form-control @error('penerima') is-invalid @enderror"
+                                required="" name="penerima" value="{{ $item->penerima ?? old('penerima') }}" disabled>
+                            @error('penerima')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

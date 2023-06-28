@@ -6,9 +6,8 @@
                 <div class="card-header">
                     <h1>Filter Data</h1>
                 </div>
-                <form action="{{ route('admin.buku-agenda.surat-masuk.filter') }}" method="post">
+                <form action="{{ route('admin.buku-agenda.surat-masuk.filter') }}" method="get">
                     <div class="card-body row">
-                        @csrf
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="tanggal_awal">Tanggal Awal</label>
@@ -24,6 +23,14 @@
                         <div class="col-md align-self-end">
                             <div class="form-group">
                                 <button class="btn btn-info btn-sm mx-3 py-2 px-3 ">Filter</button>
+                                <a href="{{ route('admin.buku-agenda.surat-masuk.pdf',[
+                                    'tanggal_awal' => request('tanggal_awal'),
+                                    'tanggal_akhir' => request('tanggal_akhir')
+                                ]) }}" class="btn btn-danger btn-sm py-2 px-3"><i class="fas fa-file-pdf"></i> Export</a>
+                                <a href="{{ route('admin.buku-agenda.surat-masuk.excel',[
+                                    'tanggal_awal' => request('tanggal_awal'),
+                                    'tanggal_akhir' => request('tanggal_akhir')
+                                ]) }}" class="btn btn-secondary btn-sm py-2 px-3"><i class="fas fa-file-excel"></i> Export</a>
                             </div>
                         </div>
                     </div>
