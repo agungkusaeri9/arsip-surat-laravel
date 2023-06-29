@@ -4,15 +4,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h5>Tambah Role</h5>
+                    <h5>Update permission</h5>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.role-permissions.update') }}" method="post" class="d-inline"
                         enctype="multipart/form-data">
                         <div class="card-body row">
-                            <div class="col-12">
-                                <h4 class="card-title mb-5">Update Permisison</h4>
-                            </div>
                             @csrf
                             <div class="col-md-12">
                                 <div class='form-group mb-3'>

@@ -10,6 +10,15 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class SuratController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:Surat Read')->only('index');
+        $this->middleware('can:Surat Create')->only(['create','store']);
+        $this->middleware('can:Surat Update')->only(['edit','update']);
+        $this->middleware('can:Surat Delete')->only('destroy');
+        $this->middleware('can:Surat Print')->only('print');
+    }
+
     public function index()
     {
         $items = Surat::latest()->get();

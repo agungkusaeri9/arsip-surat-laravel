@@ -8,6 +8,14 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:Permission Read')->only('index');
+        $this->middleware('can:Permission Create')->only(['create','store']);
+        $this->middleware('can:Permission Update')->only(['edit','update']);
+        $this->middleware('can:Permission Delete')->only('destroy');
+    }
+
     public function index()
     {
         $items = Permission::get();

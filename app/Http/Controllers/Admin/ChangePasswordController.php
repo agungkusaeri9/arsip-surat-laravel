@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ChangePasswordController extends Controller
 {
+
     public function index()
     {
        return view('admin.pages.change-password',[
@@ -34,7 +35,5 @@ class ChangePasswordController extends Controller
         }else{
             return redirect()->route('admin.change-password.index')->with('error','Password yang anda masukan salah.');
         }
-
-
     }
 }

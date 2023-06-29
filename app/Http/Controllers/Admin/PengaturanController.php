@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class PengaturanController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Setting Read')->only('index');
+        $this->middleware('can:Setting Update')->only(['update']);
+    }
+
     public function index()
     {
         $pengaturan = Pengaturan::first();

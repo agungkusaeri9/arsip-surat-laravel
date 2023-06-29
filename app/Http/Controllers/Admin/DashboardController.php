@@ -12,6 +12,12 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Dashboard');
+    }
+
     public function index()
     {
         $count =

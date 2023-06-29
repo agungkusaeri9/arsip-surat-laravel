@@ -16,6 +16,13 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class BukuAgendaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Buku Agenda Surat Masuk Read')->only('surat_masuk');
+        $this->middleware('can:Buku Agenda Surat Keluar Read')->only('surat_keluar');
+    }
+
     public function surat_masuk()
     {
         $tanggal_awal = request('tanggal_awal');

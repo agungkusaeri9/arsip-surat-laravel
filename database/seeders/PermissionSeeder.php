@@ -25,7 +25,9 @@ class PermissionSeeder extends Seeder
             'Surat Keluar Read','Surat Keluar Create','Surat Keluar Update','Surat Keluar Delete','Surat Keluar Detail',
             'Buku Agenda Surat Masuk Read','Buku Agenda Surat Keluar Read',
             'User Read','User Create','User Update','User Delete',
-            'Setting Read','Setting Update'
+            'Setting Read','Setting Update',
+            'Permission Read','Permission Create','Permission Update','Permission Delete',
+            'Role Read','Role Create','Role Update','Role Delete','Role Permission'
         ];
 
         foreach($permissions as $permission)

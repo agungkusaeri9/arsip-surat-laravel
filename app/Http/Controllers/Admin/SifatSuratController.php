@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class SifatSuratController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Sifat Surat Read')->only('index');
+        $this->middleware('can:Sifat Surat Create')->only(['create','store']);
+        $this->middleware('can:Sifat Surat Update')->only(['edit','update']);
+        $this->middleware('can:Sifat Surat Delete')->only('destroy');
+    }
+
     public function index()
     {
         $items = SifatSurat::orderBy('sifat', 'ASC')->get();
