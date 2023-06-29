@@ -27,7 +27,8 @@ class PermissionSeeder extends Seeder
             'User Read','User Create','User Update','User Delete',
             'Setting Read','Setting Update',
             'Permission Read','Permission Create','Permission Update','Permission Delete',
-            'Role Read','Role Create','Role Update','Role Delete','Role Permission'
+            'Role Read','Role Create','Role Update','Role Delete','Role Permission',
+            'Documentasi Read','Documentasi Create','Documentasi Update','Documentasi Delete','Documentasi Detail',
         ];
 
         foreach($permissions as $permission)
