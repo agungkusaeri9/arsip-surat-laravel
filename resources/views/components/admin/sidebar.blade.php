@@ -91,20 +91,20 @@
     @can('Documentasi Read')
         <li class="nav-item">
             <a class="nav-link mb-0 pb-0" href="{{ route('admin.documentasi.index') }}">
-                <i class="fas fa-fw fa-users"></i>
+                <i class="fas fa-fw fa-book"></i>
                 <span>Dokumentasi</span></a>
         </li>
     @endcan
 
-   @unlessrole('Admin')
-   @can('Documentasi Detail')
-   <li class="nav-item">
-       <a class="nav-link mb-0 pb-0" href="{{ route('admin.documentasi.detail') }}">
-           <i class="fas fa-fw fa-users"></i>
-           <span>Dokumentasi</span></a>
-   </li>
-@endcan
-   @endunlessrole
+    @unlessrole('Admin')
+        @can('Documentasi Detail')
+            <li class="nav-item">
+                <a class="nav-link mb-0 pb-0" href="{{ route('admin.documentasi.detail') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Dokumentasi</span></a>
+            </li>
+        @endcan
+    @endunlessrole
 
     <!-- Nav Item - Charts -->
     @can('Role Read')
