@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary"  style="background: #5E1914 !important">
 
   @yield('content')
 
