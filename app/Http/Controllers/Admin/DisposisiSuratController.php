@@ -11,6 +11,15 @@ use Illuminate\Http\Request;
 
 class DisposisiSuratController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:Disposisi Read')->only('index');
+        $this->middleware('can:Disposisi Create')->only(['create','store']);
+        $this->middleware('can:Disposisi Update')->only(['edit','update']);
+        $this->middleware('can:Disposisi Delete')->only('destroy');
+    }
+
+
     public function index($id)
     {
         $item = SuratMasuk::with(['disposisis.klasifikasi'])->findOrFail($id);

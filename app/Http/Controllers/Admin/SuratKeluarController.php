@@ -11,6 +11,15 @@ use Illuminate\Validation\Rule;
 
 class SuratKeluarController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Surat Keluar Read')->only('index');
+        $this->middleware('can:Surat Keluar Create')->only(['create','store']);
+        $this->middleware('can:Surat Keluar Update')->only(['edit','update']);
+        $this->middleware('can:Surat Keluar Delete')->only('destroy');
+    }
+
     public function index()
     {
         $items = SuratKeluar::latest()->get();

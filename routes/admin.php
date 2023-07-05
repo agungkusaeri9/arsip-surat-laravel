@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BukuAgendaController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DisposisiSuratController;
+use App\Http\Controllers\Admin\DocumentasiController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\KlasifikasiController;
 use App\Http\Controllers\Admin\PengaturanController;
@@ -79,3 +80,11 @@ Route::get('buku-agenda/surat-keluar',[BukuAgendaController::class,'surat_keluar
 Route::get('buku-agenda/surat-keluar/filter',[BukuAgendaController::class,'surat_keluar'])->name('buku-agenda.surat-keluar.filter');
 Route::get('buku-agenda/surat-keluar/export-pdf',[BukuAgendaController::class,'surat_keluar_pdf'])->name('buku-agenda.surat-keluar.pdf');
 Route::get('buku-agenda/surat-keluar/export-excel',[BukuAgendaController::class,'surat_keluar_excel'])->name('buku-agenda.surat-keluar.excel');
+
+// dokumentasi
+Route::resource('documentasi',DocumentasiController::class)->except('show');
+Route::get('documentasi/detail',[DocumentasiController::class,'show'])->name('documentasi.detail');
+
+Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

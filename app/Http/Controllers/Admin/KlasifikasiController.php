@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class KlasifikasiController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Klasifikasi Read')->only('index');
+        $this->middleware('can:Klasifikasi Create')->only(['create','store']);
+        $this->middleware('can:Klasifikasi Update')->only(['edit','update']);
+        $this->middleware('can:Klasifikasi Delete')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      *
